@@ -1,0 +1,41 @@
+.filter_container
+{
+    width: 80%;
+    height: 4rem;
+    background-color: white;
+    box-shadow: 0 0 16px rgb(173 173 173 / 30%);
+    margin: 0 auto;
+    border-radius: 10px;
+    padding:0 3rem;
+    box-sizing: border-box;
+    position: absolute;
+    top:20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+}
+
+
+.filter_container p
+{
+    display: flex;
+    align-items: center;
+    background-color: hsl(180, 31%, 95%);
+    padding: 0.5rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color:hsl(180, 29%, 50%);
+}
+
+ion-icon
+{
+  
+    background-color:hsl(180, 29%, 50%);
+    color: white;
+    font-size: 30px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

@@ -22,13 +22,11 @@ const Jobs = () => {
             })
         
     },[]);
-
-    console.log(jobs.length);
     return (
         <div className="jobs_container">
             {
                 jobs.map(({id,company,logo,featured,position,role,level,postedAt,contract,location,languages,tool})=> (
-                    <JobItems key={id} company={company} logo={logo} position={position} role={role} level={level} postedAt={postedAt} contract={contract} location={location} languages={languages} tool={tool} />
+                    <JobItems key={id} company={company} logo={logo} position={position} role={role} level={level} postedAt={postedAt} contract={contract} location={location} languages={[role,level,...languages]} tool={tool} />
                 ))
             }
                
