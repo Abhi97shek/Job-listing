@@ -8,7 +8,7 @@ const JobItems = ({company,logo,position,featured,postedAt,contract,news,locatio
             const data = useSelector((state)=>state.filter.data);
             const filterHandler =(e)=>{
 
-                    console.log(e.target.innerText);
+                 
                    dispatch(addFilter(e.target.innerText));
 
             };
