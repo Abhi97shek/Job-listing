@@ -1,24 +1,34 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { removeFilter,removeAll } from '../features/filter/filterSlice';
 import "../styles/Filtertablet.css";
 const FilterTablet = () => {
 
         const data = useSelector((state)=>state.filter.data);
+        const dispatch = useDispatch();
+        const removeFilterHandler =(e) =>{
+                dispatch(removeFilter(e.target.innerText));
+        };
+        const clearAllHandler =()=>{
 
-        console.log(data);
+                dispatch(removeAll());
+        };
     return (
         <div className="filter_container">
-                <p>{data[0]}</p><ion-icon name="close-outline"></ion-icon>
-                
 
-                 
-                {/* {data.map(res=>{
-                        
-                        <p>{res}<ion-icon name="close-outline"></ion-icon></p>
-
-                })}  */}
-            
-            
+        <div class="filter_data">
+                {
+                data.map((oneJob)=>
+                <>
+                <p onClick={removeFilterHandler}>{oneJob}</p><ion-icon name="close-outline" ></ion-icon>
+                </>
+                )
+              
+            }
+        </div>
+            <div class="clear_button">
+                    <span className="clear_text" onClick={clearAllHandler}>Clear</span>
+            </div>
         </div>
     )
 }

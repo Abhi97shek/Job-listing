@@ -18,7 +18,7 @@ export const filterSlice = createSlice({
                   
             },
             removeFilter:(state,action)=>{
-                state.data.pop(action.payload);
+                state.data = state.data.filter((list)=> list!==action.payload);
             },
             removeAll:(state)=>{
                 state.data = [];

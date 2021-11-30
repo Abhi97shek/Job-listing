@@ -28,6 +28,7 @@
     font-size: 14px;
     font-weight: 700;
     color:hsl(180, 29%, 50%);
+    cursor: pointer;
 }
 
 ion-icon
@@ -38,4 +39,30 @@ ion-icon
     font-size: 30px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    cursor: pointer;
+    margin-right: 1.5rem;
+}
+ion-icon:hover
+{
+    background-color: black;
+
+}
+.filter_data
+{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+
+.clear_text{
+    transition: all .2s;
+    cursor: pointer;
+    font-size: 14px;
+    color:hsl(180, 29%, 50%);
+    font-weight: 700;
+}
+.clear_text:hover
+{
+    border-bottom: 2px solid hsl(180, 29%, 50%);
 }

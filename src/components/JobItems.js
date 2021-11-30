@@ -1,6 +1,6 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import { useSelector,useDispatch } from 'react-redux';
-import { addFilter,removeFilter,removeAll } from '../features/filter/filterSlice';
+import { addFilter,removeAll } from '../features/filter/filterSlice';
 import "../styles/JobItems.css";
 const JobItems = ({company,logo,position,postedAt,contract,location,role,level,languages}) => {
 
@@ -22,9 +22,9 @@ const JobItems = ({company,logo,position,postedAt,contract,location,role,level,l
                         <p className="featured">Featured</p>
                     </div>
                     <h1 className="position">{position}</h1>
-                    <div class="days">
-                        <p>{postedAt}</p><span>.</span>
-                        <p>{contract}</p>.
+                    <div className="days">
+                        <p>{postedAt}</p><span className="dot">.</span>
+                        <p>{contract}</p><span className="dot">.</span>
                         <p>{location}</p>
                     </div>
                 </div>

@@ -83,7 +83,13 @@
     flex: 1;
     justify-content: end;
 }
-
+.dot{
+    font-size: 2rem;
+    margin: 0;
+    margin-top: -19px;
+    padding: 0;
+    color: hsl(180, 8%, 52%);
+}
 .role_languages p
 {
     color: hsl(180, 29%, 50%);
