@@ -5,6 +5,7 @@ import "../styles/JobItems.css";
 const JobItems = ({company,logo,position,featured,postedAt,contract,news,location,role,level,languages}) => {
 
             const dispatch = useDispatch();
+    
             const data = useSelector((state)=>state.filter.data);
             const filterHandler =(e)=>{
 
@@ -28,8 +29,13 @@ const JobItems = ({company,logo,position,featured,postedAt,contract,news,locatio
                         <p>{location}</p>
                     </div>
                 </div>
-                <div className="role_languages">         
-                        {languages.map(language => (
+                <hr className="line"/>
+                <div className="role_languages">  
+                                  
+                        {languages.map(language =>
+                              
+                        (
+                               
                             <p key={language} onClick={filterHandler}>{language}</p>
                         ))}
                 </div>
