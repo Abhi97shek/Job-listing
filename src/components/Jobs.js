@@ -31,6 +31,20 @@ const Jobs = () => {
                 // let combineTools = data.map((check)=>{
                 //        return  [check.role,check.level,...check.languages,...check.tools]
                 // });
+                // console.log(combineTools);
+                const newArray = data.filter(check=>{
+
+                        return (
+                                filterList.every(key=>{
+
+                                    return (
+                                        check.role === key || check.level === key || check.languages.includes(key) || check.tools.includes(key)
+                                    )
+                                })
+                        )}
+                )
+                setJobs(newArray);
+                
 
             //    const newArray=data.filter((one)=>
             //     {
@@ -41,7 +55,7 @@ const Jobs = () => {
                     
             //     }                
             //         );
-            //     setJobs(newArray); 
+            //      
             }).catch(err=>{
                 console.log(err);
             })
