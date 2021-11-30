@@ -32,16 +32,16 @@ const Jobs = () => {
                 //        return  [check.role,check.level,...check.languages,...check.tools]
                 // });
 
-               const newArray=data.filter((one)=>
-                {
-                            let cT = [one.role,one.level,...one.languages,...one.tools];
-                            console.log(cT);
-                        return cT.filter(check=>chec);
+            //    const newArray=data.filter((one)=>
+            //     {
+            //                 let cT = [one.role,one.level,...one.languages,...one.tools];
+            //                 console.log(cT);
+            //             return cT.filter(check=>chec);
                             
                     
-                }                
-                    );
-                setJobs(newArray); 
+            //     }                
+            //         );
+            //     setJobs(newArray); 
             }).catch(err=>{
                 console.log(err);
             })

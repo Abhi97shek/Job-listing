@@ -13,7 +13,7 @@ const JobItems = ({company,logo,position,featured,postedAt,contract,news,locatio
 
             };
     return (
-        <div className="job_items">
+        <div className="job_items" style={{borderLeft:featured ? '5px solid hsl(180, 29%, 50%)': ''}}>
                <img src={logo} alt="company_logo" className="logo"/>
                 <div className="company_details">
                     <div className="upper_details">
