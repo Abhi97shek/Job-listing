@@ -6,7 +6,7 @@ import JobItems from './JobItems';
 const Jobs = () => {
 
     const  filterList = useSelector((state)=> state.filter.data);
-    console.log(filterList);
+
     const [jobs,setJobs] = useState([]);
 
     useEffect(()=>{
@@ -19,18 +19,43 @@ const Jobs = () => {
             }).then(response=>{
                 return response.json();
             }).then(data=>{
-                setJobs(data);
+            
+                if(filterList.length === 0)
+                {
+                    
+                    setJobs(data);
+                    return;
+                   
+                }
+
+                // let combineTools = data.map((check)=>{
+                //        return  [check.role,check.level,...check.languages,...check.tools]
+                // });
+
+               const newArray=data.filter((one)=>
+                {
+                            let cT = [one.role,one.level,...one.languages,...one.tools];
+                            console.log(cT);
+                        return cT.filter(check=>chec);
+                            
+                    
+                }                
+                    );
+                setJobs(newArray); 
             }).catch(err=>{
                 console.log(err);
             })
         
-    },[]);
+    },[filterList]);
     return (
         <div className="jobs_container">
-            {
-                 jobs.map(({id,company,logo,featured,position,role,level,postedAt,contract,location,languages,tools})=> (
-                    <JobItems key={id} company={company} logo={logo} position={position} role={role} level={level} postedAt={postedAt} contract={contract} location={location} languages={[role,level,...languages,...tools]} />
+         
+         
+            {   
+                 jobs.map(({id,company,logo,featured,news,position,role,level,postedAt,contract,location,languages,tools})=> (
+                    <JobItems key={id} company={company} featured={featured} news={news}logo={logo} position={position} role={role} level={level} postedAt={postedAt} contract={contract} location={location} languages={[role,level,...languages,...tools]} />
                 ))
+            
             }
                
             

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import { addFilter,removeAll } from '../features/filter/filterSlice';
 import "../styles/JobItems.css";
-const JobItems = ({company,logo,position,postedAt,contract,location,role,level,languages}) => {
+const JobItems = ({company,logo,position,featured,postedAt,contract,news,location,role,level,languages}) => {
 
             const dispatch = useDispatch();
             const data = useSelector((state)=>state.filter.data);
@@ -18,8 +18,8 @@ const JobItems = ({company,logo,position,postedAt,contract,location,role,level,l
                 <div className="company_details">
                     <div className="upper_details">
                         <h2 className="company_name">{company}</h2>
-                        <p className="new">New!</p>
-                        <p className="featured">Featured</p>
+                        { news && <p className="new">New!</p>}
+                        { featured && <p className="featured">Featured</p>}
                     </div>
                     <h1 className="position">{position}</h1>
                     <div className="days">
